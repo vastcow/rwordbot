@@ -45,7 +45,7 @@ async def on_ready():
 
 @bot.event
 async def on_message(message):
-    if message.channel.name == "general":
+    if message.channel.name == "mosts-corridor-no-transphobes":
         if message.author.bot and len(message.embeds) > 0:
             await message.delete()
 
