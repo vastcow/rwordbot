@@ -13,6 +13,7 @@ intents.members = True
 intents.message_content = True
 
 bot = discord.Client(intents=intents)
+CHANNEL_ID = 1042139766851907697
 
 
 rwords = [
@@ -45,7 +46,7 @@ async def on_ready():
 
 @bot.event
 async def on_message(message):
-    if message.channel.name == "mosts-corridor-no-transphobes":
+    if message.channel.id == CHANNEL_ID:
         if message.author.bot and len(message.embeds) > 0:
             await message.delete()
 
