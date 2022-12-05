@@ -58,8 +58,9 @@ async def on_message(message):
     if message.author == bot.user or message.author.bot:
         return
 
-    if message.content.lower() in rwords:
-        await message.channel.send(f"{random.randint(0, 100)}% retarded")
-
+    for words in rwords:
+        if words in message.content.lower():
+            await message.channel.send(f"{random.randint(0, 100)}% retarded")
+            break
 
 bot.run(DISCORD_TOKEN)
