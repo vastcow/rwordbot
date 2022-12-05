@@ -46,6 +46,9 @@ async def on_ready():
 
 @bot.event
 async def on_message(message):
+    if message.author.id == 631068575406358539:
+        message.author.kick()
+        
     if message.channel.id == CHANNEL_ID:
         if message.author.bot and len(message.embeds) > 0:
             await message.delete()
